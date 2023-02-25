@@ -1,0 +1,15 @@
+<!-- Lấy (đọc) giá trị của một phần tử HTML
+Tạo 2 phần tử như trong ví dụ 2 bằng thẻ HTML, 
+khi người dùng click chuột vào nút Welcome thì hiển thị nội dung chứa trong text có tên là msg.
+Hướng dẫn: Để lấy giá trị của một phần tử HTML, bạn viết <Tên phần tử>.value -->
+
+<script>
+    document.write("<h3>Form lấy giá trị</h3>");
+    document.write("<input type=text name=msg id=msg> ");
+    document.write("<br>");
+    document.write("<input type=button value=welcome onclick=myFunction()>");
+    function myFunction(){
+        var msg = document.querySelector("#msg");
+        alert(msg.value);
+    }
+</script>

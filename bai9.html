@@ -1,0 +1,112 @@
+<!-- Bài tập cộng 2 số là cơ bản nhất trong lập trình, 
+bằng cách sử dụng toán tử cộng và kết hợp các hàm khác để tạo ra ứng dụng tính tổng.  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 9</title>
+</head>
+<body>
+
+Số a: <input type="text" id="num1" /><br><br>
+  Số b: <input type="text" id="num2"/><br><br>
+  <input type="button" value="Tổng" id="tong" onclick="tong()"/>
+  Tổng là: <span id="sum"></span>  
+    <script>
+      // EX 1:
+      // let a = 30;
+      // let b = 20;
+      // let tong = a + b;
+      // document.write("Tổng hai số là " + tong);
+      // EX 2:
+      // a
+        // let tong = () =>
+        // {
+        //   var a = Number(document.querySelector("#num1").value);
+        //   var b = Number(document.querySelector("#num2").value);
+
+        //   if( a == ''|| b== '')
+        //   {
+        //     alert(" Vui lòng nhập số");
+        
+        //   }
+
+        //   else if(isNaN(a)|| isNaN(b))
+        //   {
+        //     alert("Bạn phải nhập số");
+        //   }
+        //   else{
+        //   let sum = parseInt(a) + b;
+        //   document.querySelector("#sum").innerHTML = sum;
+        //   }
+        // } 
+
+ //Ex 3: kết hợp try -- catch
+ 
+//    let sum = (a,b) =>
+//    {
+//     try {
+//       a = Number(a);
+//       b = Number(b);
+//       if(isNaN(a)||isNaN(b))
+//       {
+//         throw new Error('Dữ liệu bạn nhập không phải số ');
+//       }
+//       return a + b;
+//     }
+//     catch(e)
+//     {
+//       console.log(e.message);
+//       return false;
+//     }
+//    }
+// console.log(sum(2,9))
+     
+//var domain = 'techtuts.net'
+ 
+// try {
+//     if (domain !== 'freetuts.net'){
+//         throw new Error('Domain nay khong phai la trang chu');
+//     }
+// } catch (e){
+//     console.log(e.message);
+// } finally{
+//     console.log('End');
+// }
+
+function UserError(){
+     
+     this.throwLogin = function(){
+         throw new Error('Invalid username and password');
+     };
+      
+     this.throwSession = function(){
+         throw new Error('Your request is timeout');
+     };
+      
+     return this;
+ }
+var username = 'thehalfheart';
+var password = 'admin@';
+try {
+    if (username !== 'admin' || password != 'admin@'){
+        new UserError().throwLogin();
+    }
+}catch (e){
+    console.log(e.message);
+}
+    </script> 
+    <!-- <script>
+      let numbers = 
+      {
+        number1: 20,
+        number2: 30
+  
+      }
+      let sum = numbers.number1 + numbers.number2;
+      console.log(sum)
+    </script>  -->
+</body>
+</html>

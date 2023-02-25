@@ -1,0 +1,7 @@
+cách dùng for
+- Lặp với số lần biết trước Ví dụ i < length
+
+cách dùng vòng lặp do-while
+- vòng lặp không biết trước số lần lặp 
+- dễ bị lặp vô hạn nếu không biết sử lý logic
+- vòng lặp thực thi đến khi điều kiện lặp sai

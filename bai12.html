@@ -1,0 +1,51 @@
+<!-- Kiểm tra số nguyên tố bằng javascript  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 12</title>
+</head>
+<body>
+    <script>
+        function kiem_tra_snt(n)
+        {
+            var flag = true;
+            if (n< 2)
+            {
+                flag = false;
+             }
+            // else if(n == 2)
+            // {
+            //     flag = true;
+            // }
+            // else if(n  % 2 == 0)
+            // {
+            //     flag = false;
+            // }
+            else
+            {
+                // lặp từ khoảng 3 đến căn bậc 2 của n với bước nhảy là 2
+                for(var i = 3 ; i < n-1; i++)
+                {
+                    if( n % i == 0)
+                    {
+                        flag = false;
+                        break;
+                    }
+                }
+            }
+            if(flag == true)
+            {
+                document.write(n + " Là số nguyên tố ");
+            }
+            else{
+                document.write(n + "không phải số nguyên tố");
+            }
+        }
+
+        kiem_tra_snt(9)
+    </script>
+</body>
+</html>

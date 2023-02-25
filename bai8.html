@@ -1,0 +1,27 @@
+<!-- -------Cách kiểm tra số nguyên âm trong javascript -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 8</title>
+</head>
+<body>
+    
+    <script>
+        // let laSoNguyenAm = (value) => 
+        // {
+        //     return (Number.isInteger(value) && value <0);
+        // }
+        // console.log(laSoNguyenAm(-2));
+
+        let laSoNguyenAm = (value) =>
+        {
+            return (typeof value =='number' && value % 1== 0 && value < 0 );
+        }
+        console.log(laSoNguyenAm(3));
+    </script>
+</body>
+</html>

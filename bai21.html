@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 21 - max min </title>
+</head>
+<body>
+    <script>
+        var min = null;
+        var max = null;
+        var value = '';
+
+        while (value != null)
+        {
+
+            //lấy giá trị
+            value = prompt("Nhập số, nếu muốn dừng thì không nhập gì");
+            // nếu người dùng huỷ thì khong thực hiện hành động gì
+            if(value != null)
+            {
+                // nếu chỉ nhập 1 số thì min và max bằng nhau
+                if(max == null)
+                {
+                     min = value;
+                     max = value;
+                }
+                else{
+                    // giả sử min là số đầu tiên đem so sách số đầu tiên với lần lượt các số nếu thoả mãn điều kiện lớn hơn
+                    // thì min sẽ bằng số đó
+                    if(min > value){
+                        min = value;
+                    }
+                    //Ngược lại nếu giả sử max là số lớn nhất đem so sách với các số để tìm ra số lớn nhất
+                    if (max < value)
+                    {
+                        max = value;
+                    }
+                    console.log(value);
+                }
+            }
+        }
+        document.write("Min là " + min + ", Max là " + max);
+    </script>
+</body>
+</html>

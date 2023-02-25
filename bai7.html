@@ -1,0 +1,47 @@
+<!-- Cách kiểm tra số nguyên dương trong javascript -->
+<!-- Theo lý thuyết thì số nguyên dương là tập hợp những số chia hết 
+    cho 1 và lớn hơn 0. 
+    Tức là dãy số 1, 2, 3 ,4 ,5 ,6 ... chính là các số nguyên dương. -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial=1.0">
+        <title>Bài 7</title>
+    </head>
+    <body>
+        <input type="text" onchange="laSoNguyenDuong(this.value)" id="val">
+        <p id="show"></p>
+        <script>
+            //dùng hàm isInteger để kiểm tra số nguyên
+            function laSoNguyenDuong(obj)
+            {
+                 var show = document.querySelector("#show");
+                
+                 var x = Number(obj);
+                
+                 if(Number.isInteger(x ) && x >0)
+                {
+                    show.innerHTML = "Là số nguyên dương";
+                }
+                else
+                {
+                    show.innerHTML = "Không phải số nguyên dương";
+                }
+                // console.log(obj);
+                
+            }
+            
+
+
+            // dùng toán tử chia lấy dư đẻ kiểm tra số nguyên dương
+            // let laSoNguyenDuong = (value) =>
+            // {
+            //     return ( typeof value == 'number' && value > 0 && value % 1 == 0);
+
+            // }
+            // console.log(laSoNguyenDuong(sưd))
+        </script>
+    </body>
+</html>

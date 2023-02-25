@@ -1,0 +1,21 @@
+<!-- Khai báo hàm trong JavaScript và cách liên kết nút nhấn với một hàm
+Tạo 2 phần tử như ví dụ 2, khi người dùng nhấn nút thì gọi một hàm có tên là HienThi
+hàm hiển thị có chức năng hiển thị nội dung trong text có tên là msg ở trên.
+
+Hướng dẫn: Trong thẻ tạo button, bạn đặt thuộc tính onClick = "<Tên hàm>",
+trong trường hợp này bạn đặt OnClick = "HienThi()". 
+Điều này có nghĩa là khi người sử dụng Click chuột (OnClick = Click chuột) thì trình duyệt hãy gọi hàm HienThi(). 
+Cũng giống như trong ngôn ngữ C, Một hàm bắt buộc phải có cặp ngoặc đơn, 
+cho dù có tham số hay không. Ví dụ khi gọi hàm HienThi thì bạn phải viết là HienThi(). -->
+<script>
+    document.write("<h3>Click để gửi dữ liệu.</h3>");
+    
+    document.write("<input type=text name=msg id=msg>");
+    document.write("<br>");document.write("<br>");
+    document.write("<input type=button value=Gửi onclick=HienThi()>");
+    function HienThi(){
+        let hienthi = document.querySelector("#msg");
+
+        alert(hienthi.value);
+    }
+</script>

@@ -1,0 +1,126 @@
+<!-- Tính tổng bằng function  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// viết hàm công 2 số tách rời và return ra 
+        // function tinh_tong()
+        // {
+        //     return a + b;
+        // }
+        // //  gọi hàm bên ngoài
+        // var a = parseInt(prompt("Nhập số a: "));
+        // var b = parseInt(prompt("Nhập số b: "));
+        // var tong = tinh_tong(a,b);
+        // document.write("Tổng hai số " + a + " +" + b + " là: " + tinh_tong());
+
+
+        // function không return 
+
+        // function tinh_tong()
+        // {
+        //     // lấy thông tin người dùng
+        //     var a = parseInt(prompt("Nhập số a: "));
+        //     var b = parseInt(prompt("Nhập số b: "));
+
+        //     var tong = a + b;
+
+        //     document.write("Tổng hai số " + a + " + " + b + "là: " + tong);
+        // }
+        // tinh_tong();
+
+
+// viết function tính tổng các phần tử lẻ trong mảng
+
+        // có return 
+        //var mang = [0,1,2,3,4,5,6,7,8,9,10];
+        // function tinh_tong()
+        //     {
+        //         
+        //          var tong = 0;
+
+        //         for(var i = 0 ; i < mang.length; i++){
+
+        //             // nếu i không chia hết cho 2 tức là số lẻ
+        //             // lấy mang tại i tức là số tại vị trí i 
+        //             if(mang[i] % 2 != 0)
+        //             {
+        //                 tong += mang[i];
+        //             }
+
+        //         }
+        //         // trả kết quả về
+        //         return tong;
+        //     }
+        //     document.write("Tổng là" + tinh_tong());
+
+        // hàm không có return 
+        // function tinh_tong(){
+        //     var tong = 0;
+        //     for ( var i = 0; i < mang.length;i++)
+        //     {
+        //         if(mang[i] % 2 != 0)
+        //         {
+        //             tong += mang[i];
+        //         }
+
+        //     }
+        //     document.write("Tổng là: " + tong);
+        // }
+        // tinh_tong();
+
+        // hàm có return thì phải gọi hàm khi muôn hàm đó chạy 
+        // không có return thì cũng phải gọi hàm thì mới chạy dc
+
+// Viết chương trình cho người dùng nhập vào số n lớn hơn 0 , sau đó tình biểu thức
+// 1/n + 2/n .... n/n;
+        // function tinh_bieu_thuc(n)
+        // {
+        //     var tong = 0;
+        //     for(var i = 1 ; i <= n ; i++)
+        //     {
+        //         tong += (1/i);
+        //     }
+        //     return tong;
+        // }
+
+        // var n = parseInt(prompt("Nhập số n: "));
+
+        // if(n <= 0){
+        //     alert(" Bạn cần nhập số > 0");
+        // }
+        // else
+        // {
+        //     document.write(" Tổng biểu thức là: " + tinh_bieu_thuc(n));
+        // }
+
+        // hàm không có return 
+        function tinh_bieu_thuc()
+        {
+            var tong = 0;
+            var n = parseInt(prompt("Nhập số cần tính: "));
+            if( n <= 0)
+            {
+                alert("phải nhập số lớn hơn 0");
+            }
+            else
+            {
+                for (var i = 1; i <= n ; i++)
+                {
+                    tong += (1/i);
+                }
+                document.write("Tổng là " + tong );
+            }
+        }
+        tinh_bieu_thuc();
+    </script>
+</body>
+</html>

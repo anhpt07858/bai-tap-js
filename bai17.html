@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 18 - Kiểm tra URL</title>
+</head>
+<body>
+    <script>
+        function isUrl(url)
+        {
+            //xác định url có tồn tại hay không
+            if( url == '' || url == null)
+            //  có thì trả về false không thì nhận giá trị true 
+                return false;
+
+            // Xoá tất cả khoảng trắng cho chuỗi url 
+                url = url.trim();
+            // Nếu có khoảng trắng thì trả về false
+            if (url.indexOf(" ") != -1)
+            
+                return false;
+            // mã định dạng 1 url 
+            var RegExp = /^http(s)?:\/\/[\w|-]+(\.[^\.]+)$/i;
+
+            // nếu mã định dạng đúng thì trả về true;
+            if(RegExp.test(url))
+            {
+                return true;
+            }
+            else{
+                return false;
+            }
+            
+        }
+        // gọi hàm để chạy nếu là true thì kết quả hợp lệ;
+        if(isUrl('http://freetuts.net'))
+        {
+            alert('Domain này hợp lệ');
+        }
+        else 
+        {
+            alert('Domain không hợp lệ');
+        }
+    </script>
+</body>
+</html>

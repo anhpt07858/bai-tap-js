@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 16 - Test EMali trong javascipt</title>
+</head>
+<body>
+    <script>
+        function isEmail(emailStr)
+        { 
+
+            // mã định dạng email
+            var emailPat = /^(.+)@(.+)$/;
+            var specialChars= "\\(\\)<>@,;:\\\\\\\"\\.\\[\\]";
+            var valiChars= "\[^\\s" + specialChars+"\]";
+            var quoteUser = "(\"[^\"]*\")";
+            var ipDomainPat = /^\[(\d{1,3})\.(\d{1,3})\.(\d(1,3))\.(\d{1,3})\]$/;
+            var atom= valiChars + '+';
+            var word = "(" + atom + "|" + quoteUser + ")";
+            var userPat = new RegExp("^" + word +"(\\." + word + ")*$");
+            var domainPat=new RegExp("^" + atom + "(\\." + atom + ")*$");
+
+            // match() kiểm tra function này có emailPat hay không
+            var matchArray = emailStr.match(emailPat);
+
+            // kiểm tra nếu không có thì là false 
+            if(matchArray == null)
+            {
+                return false;
+            }
+            
+            var user=matchArray[1];
+            var domain=matchArray[2];
+            
+            if(user.match(userPat)==null)
+            {
+                return false;
+            }
+             var IPArray = domain.match(ipDomainPat);
+             if(IPArray != null)
+             {
+                return false;
+             }
+             var atomPat = new RegExp(atom,"g");
+             var domArr = domain.match(atomPat);
+             var len=domArr.length;
+             if(domArr[domArr.length-1].length<2 || domArr[domArr.length-1].length>3)
+             {
+                return false;
+             }
+             if(len<2)
+            {
+                return false;
+            }
+            return true;
+
+
+        }
+        var str = 'thehalfhearwail.com';
+        if (isEmail(str))
+        {
+            alert("Email hợp lệ");
+        }
+        else{
+            alert("Email không hợp lệ");
+        }
+    </script>
+</body>
+</html>

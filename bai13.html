@@ -1,0 +1,135 @@
+ <!-- Vòng lặp for  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 13</title>
+</head>
+<body>
+    <!-- <form action="">
+        Nhập số: <input type="text" id="number"><br><br>
+        <input type="button" value="Kết quả" onclick="print_number()"><br><br>
+        <span id="result"></span>
+    </form>
+    <script>
+        //Tìm số từ 0 đến số trong input
+        // function print_number(){
+        //     let number = Number(document.querySelector("#number").value);
+        //     let result = document.querySelector("#result");
+
+        //     var so = '';
+        //     for(var i = 0; i  <= number; i++)
+        //     {   
+        //         so +=i + " ";
+                 
+        //         //console.log(number[i]);
+        //     }
+        //     result.innerHTML = so ;
+        // }
+
+        //Tìm số nguyên tố
+
+        function tim_so_nt(n)
+        {
+            var flag = true;
+            if(n<2)
+            {
+                flag = false;
+            }
+            else
+            {
+                for(var i = 2 ; i < n-1; i++)
+                {
+                    if(n % i == 0)
+                    {
+                        flag = false;
+                    }
+                }
+            }
+            return flag;
+        }
+
+        function print_number()
+        {
+            var number = document.querySelector("#number").value;
+            number = parseInt(number);
+            var num = '';
+            for ( var i = 1; i <= number;i++)
+            {
+                if(tim_so_nt(i))
+                {
+                    num +=i + " ";
+                }
+
+            }
+            document.querySelector("#result").innerHTML = num;
+        }
+    </script> -->
+ <style>
+    div {
+        padding: 10px;
+        margin: 5px;
+    }
+ </style>
+    <div>chẵn</div>
+    <div>lẻ</div> 
+    <div>chẵn</div>
+    <div>lẻ</div>
+    <div>chẵn </div>
+    <div>lẻ</div>
+    <div>chẵn </div>
+    <div>lẻ</div>
+    <div>chẵn </div>
+    <div>lẻ</div>
+    <div>chẵn</div>
+    <div>lẻ</div>
+    <button onclick="change_background()">Change background</button>
+    <button onclick="deleteElement()">DELETE</button>
+
+    <script>
+        function change_background()
+        {
+            let div = document.querySelectorAll("div");
+            for(var i = 0 ; i <= div.length;i++)
+            {
+                if((i+1)%2 == 0)
+                {
+                    div[i].style.color = "red";
+                }else{
+                    div[i].style.color = "blue";
+                }
+            }
+        }
+        
+        function deleteElement()
+        {
+            // lấy ra tất cả thẻ div
+            var elements = document.querySelectorAll("div");
+            // gán mảng cho element_remove
+            var elements_remove = [];
+            // gán index = 0
+            var index = 0;
+            // điều kiện index nhỏ hơn phần tử có trong mảng
+            while (index < elements.length)
+            {
+                // nếu index chia hết cho 2 và index khác 0 thì thêm một phần tử element tại index vào mảng
+                if(index % 2 == 0 )
+                {
+                    // thêm phần tử muốn xoá vào mảng elements_remove[];
+                    elements_remove.push(elements[index]);
+                }
+                index++;
+            }
+            // xoá phần tử vừa thêm vào mảng ở trên ;
+            index = 0;
+            while( index < elements_remove.length)
+            {
+                elements_remove[index].remove();
+                index++;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!-- Hướng dẫn giải phương trình bậc 1 bằng Javascript -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 11</title>
+</head>
+<body>
+
+    <!-- <form>
+        Nhập số a: <input type="text" id="a"><br><br>
+        Nhập số b: <input type="text" id="b"><br><br>
+        <input type="button" value="Tính" id="c">
+         <span id="val"></span>
+
+    </form> -->
+    <script>
+        // tongArray = (mang) =>
+        // {
+        //     let i = 0;
+        //     let sum = 0;
+        //     while(i<mang.length){
+        //          sum += mang[i];
+        //          i++;
+                 
+        //     }return sum;
+        // }
+        // var mangs = [2,3,4];
+        // console.log(tongArray(mangs))
+            document.write('Nhập số a: <input type="text" id="a"><br><br>');
+            document.write('Nhập số b: <input type="text" id="b"><br><br>');
+            document.write('<input type="button" value="Tính" id="c">');
+            document.write('<span id="val"></span> ');
+            var button = document.querySelector("#c");
+            button.onclick= function(){
+                let a = document.querySelector("#a").value;
+                let b = document.querySelector("#b").value;
+                let val = document.querySelector("#val");
+                if ( a == "" || b == "")
+                {
+                    alert("Vui lòng nhập số ");
+                }
+                else
+                {
+                    a = Number(a);
+                    b = Number(b);
+                    giai_phuong_trinh_bac_nhat(a,b);
+                }
+                
+            }
+        // ---- giải phương trình bậc nhất ax + b = 0
+         function giai_phuong_trinh_bac_nhat(a,b)
+         {
+            if( a == 0 && b == 0 )
+            {
+                val.innerHTML = "Phương trình vô số nghiệm";
+                
+            }
+            else if( a == 0 && b != 0)
+            {
+                val.innerHTML ="Phương trình vô nghiệm";
+            }
+            else if (a != 0 && b == 0)
+            {
+                val.innerHTML = "Phương trình có 1 nghiệm là: x=0" ;
+
+            }else
+            {
+                val.innerHTML = "Phương trình có nghiệm là x = " + -b/a;
+            }
+         }
+        // console.log(giai_phuong_trinh_bac_nhat(0,0));
+        
+    </script>
+</body>
+</html>

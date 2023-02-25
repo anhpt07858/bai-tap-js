@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 25- tạo button in ra thông báo </title>
+</head>
+<body>
+    
+    <h3 id="content">In ra thông báo khi bấm button bên dưới</h3>
+    <img src="../img/Anh-thien-nhien-3.jpg" alt="" width="300px" id="imga"><br>
+    <input type="button" id="but" value="Thông báo">
+    <input type="button" id="thay" value="Thay đổi nội dung">
+    <input type="button" id="back" value="Thay đổi backgound">
+    <input type="button" id="img" value="Thay đổi hình">
+    <input type="button" id="nones" value="Ẩn">
+    <input type="button" id="blocks" value="Hiện">
+
+
+
+    <script>
+        var but = document.querySelector("#but");
+        but.onclick = function(){
+            alert("Xin chào mừng đến với javascript");
+        }
+        // thay đổi nội dung
+        var thay = document.querySelector("#thay");
+         
+        thay.onclick= function()
+        {
+            document.querySelector("#content").innerHTML = document.querySelector("#content").innerHTML 
+            + "<br>"+"Hello javascript" + "<br>";
+        }
+        // thay đổi backgound
+        var back = document.querySelector("#back");
+        back.onclick = function(){
+            document.querySelector("#content").style.background = "red";
+        }
+        //thay đổi hình 
+        var img = document.querySelector("#img");
+        var img1 = "../img/anh-thien-nhien-dep-18.jpg";
+        img.onclick=function()
+        {
+            document.querySelector("#imga").src = img1;
+        }
+
+        // ẩn hiện 
+        var nones = document.querySelector("#nones");
+        var blocks = document.querySelector("#blocks");
+        nones.onclick=function(){
+            document.querySelector("#content").style.display='none';
+        }
+        
+        blocks.onclick=function(){
+            document.querySelector("#content").style.display='block';
+        }
+    </script>
+</body>
+</html>

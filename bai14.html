@@ -1,0 +1,31 @@
+ <!-- Bài tập vòng lặp while -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 14</title>
+</head>
+<body>
+    <script>
+        function tinh_tong(n)
+        {
+            var tong = 0;
+            var i = 0;
+            while( i<=n ){
+                if(n % 2 == 0)
+                {
+                    tong += i;
+                }
+
+                i++;
+            }
+
+            return tong;
+        }
+        var n = (prompt("Nhập số n"));
+        document.write("Tổng số chẵn từ 1 tời " + n +" là" + tinh_tong(n))
+    </script>
+</body>
+</html>
